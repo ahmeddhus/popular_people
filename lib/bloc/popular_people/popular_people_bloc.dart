@@ -32,8 +32,8 @@ class PopularPeopleBloc extends Bloc<PopularPeopleEvent, PopularPeopleState> {
         yield PopularPeopleError();
       }
     } on Exception catch (e) {
-      yield PopularPeopleError();
-      print('getCurrentOrders ${e.toString()}');
+      yield PopularPeopleAPIFailed();
+      print('PopularPeopleAPIFailed ${e.toString()}');
     }
   }
 }

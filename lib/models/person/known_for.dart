@@ -16,7 +16,7 @@ class KnownFor {
   String originalName;
   String overview;
   String posterPath;
-  int voteAverage;
+  dynamic voteAverage;
   int voteCount;
 
   KnownFor(

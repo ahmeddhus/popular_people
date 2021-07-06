@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:popular_people/models/error_response.dart';
 import 'package:popular_people/models/person/person_response.dart';
 
 class PopularPeopleState extends Equatable {
@@ -30,14 +31,14 @@ class NoPopularPeople extends PopularPeopleState {
   List<Object> get props => [personResponse];
 }
 
-class PopularPeopleFailed extends PopularPeopleState {
-  final PersonResponse personResponse;
+class PopularPeopleError extends PopularPeopleState {
+  final ErrorResponse errorResponse;
 
-  PopularPeopleFailed({this.personResponse});
+  PopularPeopleError({this.errorResponse});
 
   @override
-  List<Object> get props => [personResponse];
+  List<Object> get props => [errorResponse];
 }
 
 //Something in the API (maybe)
-class PopularPeopleError extends PopularPeopleState {}
+class PopularPeopleAPIFailed extends PopularPeopleState {}

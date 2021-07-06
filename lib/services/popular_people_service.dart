@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:popular_people/models/person/person_response.dart';
@@ -7,13 +8,24 @@ import 'package:popular_people/utils/constants.dart';
 
 class PopularPeopleService {
   Future<PersonResponse> fetchPopularPeoples() async {
-    var params = {"api_key": API_KEY, "language": "en-US", "page": 1};
+    var queryParameters = {
+      'api_key': API_KEY,
+      'language': 'en-US',
+      'page': '1',
+    };
 
-    Map<String, String> headers = {'Content-Type': 'application/json'};
+    Map<String, String> header = {
+      HttpHeaders.contentTypeHeader: "application/json"
+    };
 
-    var response = await http.post('$baseURL/movie/popular',
-        body: jsonEncode(params), headers: headers);
-    print(utf8.decode(response.bodyBytes));
+    Uri uri = Uri.parse('$baseURL/person/popular');
+    final finalUri = uri.replace(queryParameters: queryParameters);
+
+    var response = await http.get(
+      finalUri,
+      headers: header,
+    );
+
     return PersonResponse.fromJson(
         JsonDecoder().convert(utf8.decode(response.bodyBytes)));
   }
