@@ -47,6 +47,7 @@ class _PersonImageScreenState extends State<PersonImageScreen> {
           left: 0.0,
           bottom: 16.0,
           child: FloatingActionButton(
+            heroTag: "saveBtn",
             onPressed: () async {
               try {
                 // save image to mobile storage.
@@ -63,6 +64,23 @@ class _PersonImageScreenState extends State<PersonImageScreen> {
                     color: Style.Colors.secondaryColor,
                     size: 24.0,
                   ),
+          ),
+        ),
+        Positioned(
+          left: 8.0,
+          top: 8.0,
+          child: SafeArea(
+            child: FloatingActionButton(
+              heroTag: "backBtn",
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back,
+                color: Style.Colors.secondaryColor,
+                size: 24.0,
+              ),
+            ),
           ),
         ),
       ],

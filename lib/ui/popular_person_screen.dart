@@ -9,14 +9,9 @@ import 'package:popular_people/widgets/shared_widgets/circular_progress_indicato
 import 'package:popular_people/widgets/shared_widgets/image_builder.dart';
 import 'package:popular_people/widgets/shared_widgets/snackbar_widget.dart';
 
-class PopularPersonScreen extends StatefulWidget {
+class PopularPersonScreen extends StatelessWidget {
   static String routeName = "/popular_person_screen";
 
-  @override
-  _PopularPersonScreenState createState() => _PopularPersonScreenState();
-}
-
-class _PopularPersonScreenState extends State<PopularPersonScreen> {
   @override
   Widget build(BuildContext context) {
     int id = ModalRoute.of(context).settings.arguments;

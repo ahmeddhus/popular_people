@@ -9,19 +9,10 @@ import 'package:popular_people/widgets/shared_widgets/circular_progress_indicato
 import 'package:popular_people/widgets/shared_widgets/image_builder.dart';
 import 'package:popular_people/widgets/shared_widgets/snackbar_widget.dart';
 
-class PersonImagesWidget extends StatefulWidget {
+class PersonImagesWidget extends StatelessWidget {
   final int id;
 
   PersonImagesWidget(this.id);
-
-  @override
-  _PersonImagesWidgetState createState() => _PersonImagesWidgetState(id);
-}
-
-class _PersonImagesWidgetState extends State<PersonImagesWidget> {
-  final int id;
-
-  _PersonImagesWidgetState(this.id);
 
   @override
   Widget build(BuildContext context) {

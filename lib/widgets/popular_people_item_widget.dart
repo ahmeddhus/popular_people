@@ -4,20 +4,10 @@ import 'package:popular_people/ui/popular_person_screen.dart';
 import 'package:popular_people/utils/navigation/navigators.dart';
 import 'package:popular_people/widgets/shared_widgets/image_builder.dart';
 
-class PopularPeopleItemWidget extends StatefulWidget {
+class PopularPeopleItemWidget extends StatelessWidget {
   final Person person;
 
   PopularPeopleItemWidget(this.person);
-
-  @override
-  _PopularPeopleItemWidgetState createState() =>
-      _PopularPeopleItemWidgetState(person);
-}
-
-class _PopularPeopleItemWidgetState extends State<PopularPeopleItemWidget> {
-  final Person person;
-
-  _PopularPeopleItemWidgetState(this.person);
 
   @override
   Widget build(BuildContext context) {

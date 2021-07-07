@@ -8,14 +8,9 @@ import 'package:popular_people/widgets/popular_people_item_widget.dart';
 import 'package:popular_people/widgets/shared_widgets/circular_progress_indicator_widget.dart';
 import 'package:popular_people/widgets/shared_widgets/snackbar_widget.dart';
 
-class PopularPeopleScreen extends StatefulWidget {
+class PopularPeopleScreen extends StatelessWidget {
   static String routeName = "/popular_people_screen";
 
-  @override
-  _PopularPeopleScreenState createState() => _PopularPeopleScreenState();
-}
-
-class _PopularPeopleScreenState extends State<PopularPeopleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
