@@ -8,17 +8,17 @@ part of 'person.dart';
 
 Person _$PersonFromJson(Map<String, dynamic> json) {
   return Person(
-    adult: json['adult'] as bool ?? false,
-    gender: json['gender'] as int ?? 0,
-    id: json['id'] as int ?? 0,
+    adult: json['adult'] as bool,
+    gender: json['gender'] as int,
+    id: json['id'] as int,
     knownFor: (json['known_for'] as List)
         ?.map((e) =>
             e == null ? null : KnownFor.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    knownForDepartment: json['known_for_department'] as String ?? '',
-    name: json['name'] as String ?? '',
-    popularity: (json['popularity'] as num)?.toDouble() ?? 0.0,
-    profilePath: json['profile_path'] as String ?? '',
+    knownForDepartment: json['known_for_department'] as String,
+    name: json['name'] as String,
+    popularity: (json['popularity'] as num)?.toDouble(),
+    profilePath: json['profile_path'] as String,
   );
 }
 

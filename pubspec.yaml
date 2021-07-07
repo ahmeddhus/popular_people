@@ -18,6 +18,7 @@ dependencies:
   equatable:
   json_annotation:
   http:
+  image_downloader:
 
 
 dev_dependencies:

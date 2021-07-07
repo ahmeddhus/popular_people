@@ -7,8 +7,8 @@ abstract class PopularPeopleEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FetchCurrentPopularPeople extends PopularPeopleEvent {
-  FetchCurrentPopularPeople();
+class FetchPopularPeople extends PopularPeopleEvent {
+  FetchPopularPeople();
 
   @override
   List<Object> get props => [];

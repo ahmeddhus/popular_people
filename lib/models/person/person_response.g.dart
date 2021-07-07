@@ -8,13 +8,13 @@ part of 'person_response.dart';
 
 PersonResponse _$PersonResponseFromJson(Map<String, dynamic> json) {
   return PersonResponse(
-    page: json['page'] as int ?? 0,
+    page: json['page'] as int,
     results: (json['results'] as List)
         ?.map((e) =>
             e == null ? null : Person.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    totalPages: json['total_pages'] as int ?? 0,
-    totalResults: json['total_results'] as int ?? 0,
+    totalPages: json['total_pages'] as int,
+    totalResults: json['total_results'] as int,
   );
 }
 

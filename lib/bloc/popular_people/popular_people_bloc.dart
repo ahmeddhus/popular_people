@@ -9,13 +9,13 @@ class PopularPeopleBloc extends Bloc<PopularPeopleEvent, PopularPeopleState> {
 
   @override
   Stream<PopularPeopleState> mapEventToState(PopularPeopleEvent event) async* {
-    if (event is FetchCurrentPopularPeople) {
+    if (event is FetchPopularPeople) {
       yield* getPopularPeople(event);
     }
   }
 
   Stream<PopularPeopleState> getPopularPeople(
-      FetchCurrentPopularPeople event) async* {
+      FetchPopularPeople event) async* {
     yield PopularPeopleLoading();
 
     try {
