@@ -146,6 +146,10 @@ class _PopularPersonScreenState extends State<PopularPersonScreen> {
                   PersonImagesWidget(state.personDetails.id),
                 ],
               )
-            : Text('NO Date');
+            : Center(
+                child: Text(
+                  'No Data',
+                ),
+              );
   }
 }

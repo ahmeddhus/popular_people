@@ -18,7 +18,7 @@ class PersonImagesBloc extends Bloc<PersonImagesEvent, PersonImagesState> {
     yield PersonImagesLoading();
 
     try {
-       PersonImages personImages =
+      PersonImages personImages =
           await PersonDetailsService.fetchPersonImages(event.id);
 
       if (personImages != null) {

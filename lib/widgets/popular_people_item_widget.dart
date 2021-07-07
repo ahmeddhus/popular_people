@@ -22,18 +22,16 @@ class _PopularPeopleItemWidgetState extends State<PopularPeopleItemWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         pushNameWithArguments(
-            context,
-            PopularPersonScreen.routeName,
-            person.id);
+            context, PopularPersonScreen.routeName, person.id);
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             ImageBuilder(
-              image: person.profilePath,
+              image: person.profilePath ?? '',
               width: 130.0,
               height: 130.0,
               radius: 10,
@@ -41,7 +39,7 @@ class _PopularPeopleItemWidgetState extends State<PopularPeopleItemWidget> {
             SizedBox(height: 5.0),
             Center(
               child: Text(
-                person.name,
+                person.name ?? '',
                 style: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
@@ -50,7 +48,7 @@ class _PopularPeopleItemWidgetState extends State<PopularPeopleItemWidget> {
             ),
             Center(
               child: Text(
-                person.knownForDepartment,
+                person.knownForDepartment ?? '',
                 style: TextStyle(
                   fontSize: 14.0,
                 ),

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:popular_people/local_storage/db_helper.dart';
 import 'package:popular_people/models/person/known_for.dart';
 
 part 'person.g.dart';
@@ -28,4 +29,13 @@ class Person {
       _$PersonFromJson(json);
 
   Map<String, dynamic> toJson() => _$PersonToJson(this);
+
+  Map<String, dynamic> toMap(){
+    return {
+      DbHelper.COLUMN_PERSON_ID:id,
+      DbHelper.COLUMN_NAME:name,
+      DbHelper.COLUMN_KNOW_FOR_DEPARTMENT:knownForDepartment,
+      DbHelper.COLUMN_PROFILE_PATH:profilePath,
+    };
+  }
 }
